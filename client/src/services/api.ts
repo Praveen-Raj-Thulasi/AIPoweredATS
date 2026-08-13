@@ -40,6 +40,7 @@ import {
 } from '@ats/shared';
 
 const API_BASE = (import.meta.env.VITE_API_URL as string) || '/api/v1';
+console.log('VERITY: API_BASE is set to:', API_BASE);
 
 let authToken: string | null = localStorage.getItem('verity_token');
 
