@@ -39,7 +39,7 @@ import {
   AnalyticsFilterParams,
 } from '@ats/shared';
 
-const API_BASE = '/api/v1';
+const API_BASE = (import.meta.env.VITE_API_URL as string) || '/api/v1';
 
 let authToken: string | null = localStorage.getItem('verity_token');
 
