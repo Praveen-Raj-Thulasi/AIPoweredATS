@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@ats/shared": ["./shared/types/index.ts"],
+      "@ats/shared/*": ["./shared/*"]
+    }
+  }
+}

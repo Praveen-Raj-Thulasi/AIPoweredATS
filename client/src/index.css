@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 4.5%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 4.5%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 14%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+
+  body {
+    @apply bg-[#09090b] text-zinc-100 font-sans antialiased selection:bg-white selection:text-black;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.025) 0px, transparent 40%),
+      radial-gradient(at 100% 100%, rgba(255, 255, 255, 0.015) 0px, transparent 40%);
+    background-attachment: fixed;
+    letter-spacing: -0.01em;
+  }
+
+  /* Accessible focus indicators */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-white/70 ring-offset-2 ring-offset-black;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Premium Enterprise Surface Utilities */
+.enterprise-card {
+  @apply bg-[#0c0c0e]/85 border border-zinc-800/80 rounded-2xl transition-all duration-300 backdrop-blur-md;
+}
+
+.enterprise-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.enterprise-card-hover:hover {
+  border-color: rgba(63, 63, 70, 0.8);
+  background-color: rgba(16, 16, 19, 0.9);
+  box-shadow: 0 0 25px -5px rgba(255, 255, 255, 0.07);
+  transform: translateY(-2px);
+}
+
+
+.enterprise-panel {
+  @apply bg-[#0c0c0e]/95 border border-zinc-800/90 rounded-2xl backdrop-blur-xl;
+}
+
+.enterprise-section {
+  @apply space-y-6 pt-8 pb-4;
+}
+
+.enterprise-divider {
+  @apply h-px bg-zinc-800/60 w-full;
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(12, 12, 14, 0.75);
+  border: 1px solid rgba(63, 63, 70, 0.3);
+  backdrop-filter: blur(16px);
+  border-radius: 1rem;
+}
+
+.glass-card {
+  background: rgba(12, 12, 14, 0.6);
+  border: 1px solid rgba(63, 63, 70, 0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(16, 16, 20, 0.75);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 25px -5px rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+/* Neon Glow Gradients & Borders */
+.gradient-border-purple {
+  position: relative;
+}
+.gradient-border-purple::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #7C3AED, #3B82F6);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-combine: xor;
+  mask-combine: exclude;
+  pointer-events: none;
+}
+
+.gradient-border-magenta {
+  position: relative;
+}
+.gradient-border-magenta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(135deg, #3B82F6, #7C3AED, #EC4899);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-combine: xor;
+  mask-combine: exclude;
+  pointer-events: none;
+}
+
+/* Neon focus effects for inputs */
+.neon-input {
+  @apply bg-black/40 border border-zinc-800 text-xs text-white transition-all duration-300 focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple/50 focus:shadow-glow-purple;
+}
+
+/* Tab Underlines */
+.active-tab-underline {
+  position: relative;
+}
+.active-tab-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  border-radius: 9999px;
+  animation: tabUnderlineIn 0.3s ease-out forwards;
+}
+
+@keyframes tabUnderlineIn {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+/* Custom Clean Monochromatic Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Shimmer animation for skeleton loaders */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.shimmer-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-effect::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.03) 20%,
+    rgba(255, 255, 255, 0.07) 60%,
+    rgba(255, 255, 255, 0)
+  );
+  animation: shimmer 2s infinite;
+  content: '';
+}
+
+
+
