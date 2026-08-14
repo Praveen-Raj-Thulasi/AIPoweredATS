@@ -5,6 +5,7 @@ import {
   Mail,
   Fingerprint,
   Cpu,
+  FileText,
 } from 'lucide-react';
 import { Application, ApplicationStage, CandidateCapability, ProofOfSkillEvaluation, VerificationState } from '@ats/shared';
 import { Modal } from '../ui/Modal';
@@ -143,6 +144,20 @@ export const CandidateScorecardModal: React.FC<CandidateScorecardModalProps> = (
           </div>
 
           <div className="flex items-center gap-2">
+            {application.candidate?.resumeUrl && (
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  if (application.candidate?.resumeUrl) {
+                    window.open(application.candidate.resumeUrl, '_blank', 'noopener,noreferrer');
+                  }
+                }}
+              >
+                <FileText className="w-3.5 h-3.5 mr-1.5" />
+                View Resume
+              </Button>
+            )}
             <Button
               variant="outline"
               size="sm"

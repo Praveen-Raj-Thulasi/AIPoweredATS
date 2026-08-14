@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Search, Plus, MapPin, Sparkles } from 'lucide-react';
+import { Mail, Search, Plus, MapPin, Sparkles, FileText } from 'lucide-react';
 import { Candidate } from '@ats/shared';
 import { Card } from '../ui/Card';
 import { Button } from '../ui/Button';
@@ -121,21 +121,38 @@ export const CandidateList: React.FC<CandidateListProps> = ({
                 <span className="text-[10px] text-zinc-500 font-mono">
                   Ingested {new Date(candidate.createdAt).toLocaleDateString()}
                 </span>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() =>
-                    onOpenEmailComposer(
-                      candidate.email,
-                      `${candidate.firstName} ${candidate.lastName}`,
-                      candidate.headline || 'Position'
-                    )
-                  }
-                  className="border-zinc-805 bg-black/40 font-semibold"
-                >
-                  <Mail className="w-3.5 h-3.5 mr-1" />
-                  Contact
-                </Button>
+                <div className="flex items-center gap-2">
+                  {candidate.resumeUrl && (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => {
+                        if (candidate.resumeUrl) {
+                          window.open(candidate.resumeUrl, '_blank', 'noopener,noreferrer');
+                        }
+                      }}
+                      className="border-zinc-805 bg-black/40 font-semibold"
+                    >
+                      <FileText className="w-3.5 h-3.5 mr-1" />
+                      Resume
+                    </Button>
+                  )}
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() =>
+                      onOpenEmailComposer(
+                        candidate.email,
+                        `${candidate.firstName} ${candidate.lastName}`,
+                        candidate.headline || 'Position'
+                      )
+                    }
+                    className="border-zinc-805 bg-black/40 font-semibold"
+                  >
+                    <Mail className="w-3.5 h-3.5 mr-1" />
+                    Contact
+                  </Button>
+                </div>
               </div>
             </Card>
           ))}

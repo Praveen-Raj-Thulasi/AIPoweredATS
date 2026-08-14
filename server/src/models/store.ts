@@ -54,6 +54,8 @@ import { InterviewSessionModel } from './InterviewSession.model';
 import { DecisionAuditModel } from './DecisionAudit.model';
 import { isConnectedToMongo } from '../utils/db';
 import { redisCache } from '../utils/redis';
+import { storageService } from '../services/storage';
+
 
 export interface StoredUser extends User {
   passwordHash: string;
@@ -438,6 +440,13 @@ class ATSStore {
 
     const total = all.length;
     const paginated = all.slice((page - 1) * limit, page * limit);
+    for (const c of paginated) {
+      if (c.resumeKey) {
+        try {
+          c.resumeUrl = await storageService.getSignedDownloadUrl(c.resumeKey);
+        } catch {}
+      }
+    }
     return { data: paginated, meta: { page, limit, total, totalPages: Math.ceil(total / limit) } };
   }
 
@@ -456,6 +465,11 @@ class ATSStore {
     }
     if (candidate && organizationId && candidate.organizationId && candidate.organizationId !== organizationId) {
       return null;
+    }
+    if (candidate && candidate.resumeKey) {
+      try {
+        candidate.resumeUrl = await storageService.getSignedDownloadUrl(candidate.resumeKey);
+      } catch {}
     }
     return candidate;
   }
@@ -480,6 +494,11 @@ class ATSStore {
       } catch {
         this.candidates.set(id, candidate);
       }
+    }
+    if (candidate.resumeKey) {
+      try {
+        candidate.resumeUrl = await storageService.getSignedDownloadUrl(candidate.resumeKey);
+      } catch {}
     }
     this.candidates.set(candidate.id, candidate);
     return candidate;
