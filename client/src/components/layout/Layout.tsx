@@ -20,7 +20,7 @@ export const Layout: React.FC<LayoutProps> = ({
   onOpenResumeUpload,
 }) => {
   return (
-    <div className="min-h-screen flex flex-col bg-[#09090b] text-zinc-100 selection:bg-white selection:text-black">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800 selection:bg-sky-500 selection:text-white">
       <Header onOpenCreateJob={onOpenCreateJob} onOpenResumeUpload={onOpenResumeUpload} />
       <div className="flex flex-1 overflow-hidden">
         <Sidebar
@@ -28,7 +28,7 @@ export const Layout: React.FC<LayoutProps> = ({
           onTabChange={onTabChange}
           activeApplicationsCount={activeApplicationsCount}
         />
-        <main className="flex-1 overflow-y-auto px-6 py-8 md:px-10 md:py-10 lg:px-12 lg:py-10 bg-[#09090b]">
+        <main className="flex-1 overflow-y-auto px-6 py-8 md:px-10 md:py-10 lg:px-12 lg:py-10 bg-slate-50">
           <div className="max-w-[1440px] mx-auto space-y-10 animate-fade-in">{children}</div>
         </main>
       </div>
