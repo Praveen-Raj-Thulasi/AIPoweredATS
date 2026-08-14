@@ -26,15 +26,15 @@ export const Button: React.FC<ButtonProps> = ({
   };
 
   const variantStyles = {
-    primary: 'bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-sm focus:ring-blue-600 border border-blue-600',
-    gradient: 'bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-sm focus:ring-blue-600 border border-blue-600',
+    primary: 'bg-sky-500 hover:bg-sky-600 text-white font-semibold shadow-sm focus:ring-sky-500 border border-sky-500',
+    gradient: 'bg-sky-500 hover:bg-sky-600 text-white font-semibold shadow-sm focus:ring-sky-500 border border-sky-500',
     secondary: 'bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200 focus:ring-slate-400',
     outline: 'border border-slate-200 hover:border-slate-350 hover:bg-slate-50 text-slate-700 hover:text-slate-900 focus:ring-slate-400',
     ghost: 'hover:bg-slate-100/80 text-slate-500 hover:text-slate-900 focus:ring-slate-400 border border-transparent',
     danger: 'bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 shadow-sm focus:ring-red-400',
-    'gradient-purple': 'bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-semibold shadow-glow-blue focus:ring-blue-600 border-none',
-    'gradient-magenta': 'bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-500 hover:from-blue-600 hover:via-blue-500 hover:to-cyan-400 text-white font-semibold shadow-glow-cyan focus:ring-blue-600 border-none',
-    'gradient-action': 'bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-450 text-white font-semibold shadow-glow-blue focus:ring-blue-600 border-none',
+    'gradient-purple': 'bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-400 hover:to-cyan-400 text-white font-semibold shadow-glow-blue focus:ring-sky-500 border-none',
+    'gradient-magenta': 'bg-gradient-to-r from-sky-600 via-sky-500 to-cyan-400 hover:from-sky-500 hover:via-sky-400 hover:to-cyan-300 text-white font-semibold shadow-glow-cyan focus:ring-sky-500 border-none',
+    'gradient-action': 'bg-gradient-to-r from-sky-500 to-sky-400 hover:from-sky-400 hover:to-sky-350 text-white font-semibold shadow-glow-blue focus:ring-sky-500 border-none',
   };
 
   return (

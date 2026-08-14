@@ -30,7 +30,7 @@ export const Badge: React.FC<BadgeProps> = ({
     orange: 'bg-orange-50 text-orange-700 border border-orange-200 font-medium',
     danger: 'bg-red-50 text-red-755 border border-red-205 font-medium',
     purple: 'bg-indigo-50 text-indigo-700 border border-indigo-200 font-medium',
-    blue: 'bg-blue-50 text-blue-700 border border-blue-200 font-medium',
+    blue: 'bg-sky-50 text-sky-700 border border-sky-200 font-medium',
     outline: 'border border-slate-200 text-slate-600 bg-transparent hover:border-slate-300',
   };
 
