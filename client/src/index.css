@@ -214,8 +214,21 @@
 .bg-\[\#0c0c0e\]\/80,
 .bg-\[\#0c0c0e\]\/50,
 .bg-\[\#0c0c0e\]\/90,
-.bg-\[\#0c0c0e\]\/95 {
+.bg-\[\#0c0c0e\]\/95,
+.bg-\[\#09090b\],
+.bg-\[\#09090b\]\/90 {
+  background-color: #f8fafc !important; /* Default to soft slate layout background */
+}
+
+/* Force specific components to white surfaces */
+header,
+aside,
+.enterprise-card,
+.enterprise-panel,
+.glass-panel,
+.glass-card {
   background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
 }
 
 .bg-zinc-900,
