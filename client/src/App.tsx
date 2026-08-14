@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { LoginPage } from './components/auth/LoginPage';
 import { RegisterPage } from './components/auth/RegisterPage';
+import { LandingPage } from './components/landing/LandingPage';
 import { Layout } from './components/layout/Layout';
 import { NavTab } from './components/layout/Sidebar';
 import { OverviewDashboard } from './components/dashboard/OverviewDashboard';
@@ -30,7 +31,7 @@ import { Job, Candidate, Application, DashboardMetrics, ApplicationStage, Interv
 
 const MainApp: React.FC = () => {
   const { user, isAuthenticated, isLoading } = useAuth();
-  const [authView, setAuthView] = useState<'login' | 'register'>('login');
+  const [authView, setAuthView] = useState<'landing' | 'login' | 'register'>('landing');
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
 
   const addToast = (type: 'success' | 'error' | 'info' | 'warning', title: string, message?: string) => {
@@ -120,9 +121,27 @@ const MainApp: React.FC = () => {
 
   if (!isAuthenticated || !user) {
     if (authView === 'register') {
-      return <RegisterPage onNavigateToLogin={() => setAuthView('login')} />;
+      return (
+        <RegisterPage
+          onNavigateToLogin={() => setAuthView('login')}
+          onNavigateToLanding={() => setAuthView('landing')}
+        />
+      );
     }
-    return <LoginPage onNavigateToRegister={() => setAuthView('register')} />;
+    if (authView === 'login') {
+      return (
+        <LoginPage
+          onNavigateToRegister={() => setAuthView('register')}
+          onNavigateToLanding={() => setAuthView('landing')}
+        />
+      );
+    }
+    return (
+      <LandingPage
+        onNavigateToLogin={() => setAuthView('login')}
+        onNavigateToRegister={() => setAuthView('register')}
+      />
+    );
   }
 
   const handleSelectApplication = async (appId: string) => {
