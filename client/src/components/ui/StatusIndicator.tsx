@@ -30,39 +30,39 @@ export const StatusIndicator: React.FC<StatusIndicatorProps> = ({
 }) => {
   const normalized = (status || '').toUpperCase().trim();
 
-  let icon = <Circle className="w-3 h-3 text-zinc-500" />;
+  let icon = <Circle className="w-3 h-3 text-slate-500" />;
   let text = label || 'Unverified';
-  let styleClasses = 'text-zinc-400 bg-zinc-900/40 border-zinc-800/80';
+  let styleClasses = 'text-slate-600 bg-slate-50 border-slate-250';
 
   if (normalized === 'VERIFIED' || normalized === 'READY' || normalized === 'READY_FOR_OFFER') {
-    icon = <Check className="w-3 h-3 text-emerald-400 stroke-[2.5]" />;
+    icon = <Check className="w-3 h-3 text-emerald-600 stroke-[2.5]" />;
     text = label || 'Verified';
-    styleClasses = 'text-emerald-300 bg-emerald-950/20 border-emerald-800/40 shadow-glow-emerald/20';
+    styleClasses = 'text-emerald-700 bg-emerald-50 border-emerald-200';
   } else if (
     normalized === 'PARTIALLY_VERIFIED' ||
     normalized === 'PARTIAL' ||
     normalized === 'MOSTLY_READY' ||
     normalized === 'NEEDS_TARGETED_VERIFICATION'
   ) {
-    icon = <AlertTriangle className="w-3 h-3 text-amber-400" />;
+    icon = <AlertTriangle className="w-3 h-3 text-amber-600" />;
     text = label || 'Partial';
-    styleClasses = 'text-amber-300 bg-amber-950/20 border-amber-800/40 shadow-glow-amber/20';
+    styleClasses = 'text-amber-700 bg-amber-50 border-amber-200';
   } else if (
     normalized === 'INSUFFICIENT_EVIDENCE' ||
     normalized === 'INSUFFICIENT' ||
     normalized === 'REQUIRES_REVIEW'
   ) {
-    icon = <AlertCircle className="w-3 h-3 text-brand-coral" />;
+    icon = <AlertCircle className="w-3 h-3 text-red-650" />;
     text = label || 'Insufficient Evidence';
-    styleClasses = 'text-rose-300 bg-rose-950/20 border-rose-900/40 shadow-glow-coral/20';
+    styleClasses = 'text-red-755 bg-red-50 border-red-205';
   } else if (normalized === 'CONTRADICTED' || normalized === 'CONFLICTING' || normalized === 'REJECTED') {
-    icon = <X className="w-3 h-3 text-rose-400 stroke-[2.5]" />;
+    icon = <X className="w-3 h-3 text-rose-600 stroke-[2.5]" />;
     text = label || 'Contradicted';
-    styleClasses = 'text-rose-300 bg-rose-950/20 border-rose-800/40 shadow-glow-coral/20';
+    styleClasses = 'text-rose-700 bg-rose-50 border-rose-200';
   } else if (normalized === 'UNVERIFIED' || normalized === 'PENDING') {
-    icon = <Circle className="w-3 h-3 text-zinc-500" />;
+    icon = <Circle className="w-3 h-3 text-slate-400" />;
     text = label || 'Unverified';
-    styleClasses = 'text-zinc-400 bg-zinc-900/40 border-zinc-800/70';
+    styleClasses = 'text-slate-500 bg-slate-50 border-slate-200';
   }
 
 

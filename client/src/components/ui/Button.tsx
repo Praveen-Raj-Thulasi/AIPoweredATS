@@ -17,7 +17,7 @@ export const Button: React.FC<ButtonProps> = ({
   disabled,
   ...props
 }) => {
-  const baseStyles = 'inline-flex items-center justify-center font-medium rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-40 disabled:cursor-not-allowed select-none active:scale-[0.97] hover:-translate-y-0.5';
+  const baseStyles = 'inline-flex items-center justify-center font-medium rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white disabled:opacity-40 disabled:cursor-not-allowed select-none active:scale-[0.97] hover:-translate-y-0.5';
 
   const sizeStyles = {
     sm: 'px-3 py-1.5 text-xs gap-1.5',
@@ -26,15 +26,15 @@ export const Button: React.FC<ButtonProps> = ({
   };
 
   const variantStyles = {
-    primary: 'bg-white hover:bg-zinc-100 text-black font-semibold shadow-sm focus:ring-white border border-white',
-    gradient: 'bg-white hover:bg-zinc-100 text-black font-semibold shadow-sm focus:ring-white border border-white',
-    secondary: 'bg-zinc-900/90 hover:bg-zinc-800 text-zinc-100 border border-zinc-800 focus:ring-zinc-400',
-    outline: 'border border-zinc-850 hover:border-zinc-700 hover:bg-zinc-900/60 text-zinc-300 hover:text-white focus:ring-zinc-400',
-    ghost: 'hover:bg-zinc-900/80 text-zinc-400 hover:text-zinc-100 focus:ring-zinc-400 border border-transparent',
-    danger: 'bg-rose-950/40 hover:bg-rose-900/60 text-rose-200 border border-rose-900/50 shadow-glow-coral focus:ring-rose-400',
-    'gradient-purple': 'bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-semibold shadow-glow-purple focus:ring-brand-purple border-none',
-    'gradient-magenta': 'bg-gradient-to-r from-blue-600 via-indigo-600 to-pink-600 hover:from-blue-500 hover:via-indigo-500 hover:to-pink-500 text-white font-semibold shadow-glow-magenta focus:ring-brand-purple border-none',
-    'gradient-action': 'bg-gradient-to-r from-blue-500 to-violet-600 hover:from-blue-400 hover:to-violet-500 text-white font-semibold shadow-glow-blue focus:ring-brand-blue border-none',
+    primary: 'bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-sm focus:ring-blue-600 border border-blue-600',
+    gradient: 'bg-blue-600 hover:bg-blue-700 text-white font-semibold shadow-sm focus:ring-blue-600 border border-blue-600',
+    secondary: 'bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200 focus:ring-slate-400',
+    outline: 'border border-slate-200 hover:border-slate-350 hover:bg-slate-50 text-slate-700 hover:text-slate-900 focus:ring-slate-400',
+    ghost: 'hover:bg-slate-100/80 text-slate-500 hover:text-slate-900 focus:ring-slate-400 border border-transparent',
+    danger: 'bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 shadow-sm focus:ring-red-400',
+    'gradient-purple': 'bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-semibold shadow-glow-blue focus:ring-blue-600 border-none',
+    'gradient-magenta': 'bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-500 hover:from-blue-600 hover:via-blue-500 hover:to-cyan-400 text-white font-semibold shadow-glow-cyan focus:ring-blue-600 border-none',
+    'gradient-action': 'bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-450 text-white font-semibold shadow-glow-blue focus:ring-blue-600 border-none',
   };
 
   return (

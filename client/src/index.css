@@ -4,39 +4,39 @@
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 4.5%;
-    --card-foreground: 0 0% 98%;
-    --popover: 240 10% 4.5%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 100%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 12%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 14%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
   }
 
   body {
-    @apply bg-[#09090b] text-zinc-100 font-sans antialiased selection:bg-white selection:text-black;
+    @apply bg-slate-50 text-slate-900 font-sans antialiased selection:bg-blue-600 selection:text-white;
     background-image: 
-      radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.025) 0px, transparent 40%),
-      radial-gradient(at 100% 100%, rgba(255, 255, 255, 0.015) 0px, transparent 40%);
+      radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.04) 0px, transparent 40%),
+      radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.03) 0px, transparent 40%);
     background-attachment: fixed;
     letter-spacing: -0.01em;
   }
 
   /* Accessible focus indicators */
   *:focus-visible {
-    @apply outline-none ring-2 ring-white/70 ring-offset-2 ring-offset-black;
+    @apply outline-none ring-2 ring-blue-600/70 ring-offset-2 ring-offset-white;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -46,7 +46,7 @@
 
 /* Premium Enterprise Surface Utilities */
 .enterprise-card {
-  @apply bg-[#0c0c0e]/85 border border-zinc-800/80 rounded-2xl transition-all duration-300 backdrop-blur-md;
+  @apply bg-white/90 border border-slate-200/80 rounded-2xl transition-all duration-300 backdrop-blur-md shadow-sm;
 }
 
 .enterprise-card-hover {
@@ -54,15 +54,14 @@
 }
 
 .enterprise-card-hover:hover {
-  border-color: rgba(63, 63, 70, 0.8);
-  background-color: rgba(16, 16, 19, 0.9);
-  box-shadow: 0 0 25px -5px rgba(255, 255, 255, 0.07);
+  border-color: rgba(59, 130, 246, 0.3);
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.08);
   transform: translateY(-2px);
 }
 
-
 .enterprise-panel {
-  @apply bg-[#0c0c0e]/95 border border-zinc-800/90 rounded-2xl backdrop-blur-xl;
+  @apply bg-white/95 border border-slate-200/90 rounded-2xl backdrop-blur-xl shadow-sm;
 }
 
 .enterprise-section {
@@ -70,33 +69,33 @@
 }
 
 .enterprise-divider {
-  @apply h-px bg-zinc-800/60 w-full;
+  @apply h-px bg-slate-200/60 w-full;
 }
 
 /* Glassmorphism Classes */
 .glass-panel {
-  background: rgba(12, 12, 14, 0.75);
-  border: 1px solid rgba(63, 63, 70, 0.3);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(203, 213, 225, 0.5);
   backdrop-filter: blur(16px);
   border-radius: 1rem;
 }
 
 .glass-card {
-  background: rgba(12, 12, 14, 0.6);
-  border: 1px solid rgba(63, 63, 70, 0.25);
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(203, 213, 225, 0.4);
   backdrop-filter: blur(12px);
   border-radius: 1rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-card:hover {
-  background: rgba(16, 16, 20, 0.75);
-  border-color: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 0 25px -5px rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.08);
   transform: translateY(-2px);
 }
 
-/* Neon Glow Gradients & Borders */
+/* Neon Glow Gradients & Borders (mapped to premium blues) */
 .gradient-border-purple {
   position: relative;
 }
@@ -106,7 +105,7 @@
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(135deg, #7C3AED, #3B82F6);
+  background: linear-gradient(135deg, #2563EB, #06B6D4);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-combine: xor;
   mask-combine: exclude;
@@ -122,7 +121,7 @@
   inset: 0;
   border-radius: inherit;
   padding: 1.5px;
-  background: linear-gradient(135deg, #3B82F6, #7C3AED, #EC4899);
+  background: linear-gradient(135deg, #2563EB, #3B82F6, #06B6D4);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-combine: xor;
   mask-combine: exclude;
@@ -131,7 +130,7 @@
 
 /* Neon focus effects for inputs */
 .neon-input {
-  @apply bg-black/40 border border-zinc-800 text-xs text-white transition-all duration-300 focus:outline-none focus:border-brand-purple focus:ring-1 focus:ring-brand-purple/50 focus:shadow-glow-purple;
+  @apply bg-white border border-slate-200 text-xs text-slate-900 transition-all duration-300 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600/50 focus:shadow-glow-blue;
 }
 
 /* Tab Underlines */
@@ -145,8 +144,8 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: #ffffff;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  background: #2563eb;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
   border-radius: 9999px;
   animation: tabUnderlineIn 0.3s ease-out forwards;
 }
@@ -162,14 +161,14 @@
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #09090b;
+  background: #f8fafc;
 }
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #cbd5e1;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+  background: #94a3b8;
 }
 
 /* Shimmer animation for skeleton loaders */
@@ -193,14 +192,144 @@
   transform: translateX(-100%);
   background-image: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0) 0,
-    rgba(255, 255, 255, 0.03) 20%,
-    rgba(255, 255, 255, 0.07) 60%,
-    rgba(255, 255, 255, 0)
+    rgba(0, 0, 0, 0) 0,
+    rgba(0, 0, 0, 0.02) 20%,
+    rgba(0, 0, 0, 0.04) 60%,
+    rgba(0, 0, 0, 0)
   );
   animation: shimmer 2s infinite;
   content: '';
 }
+
+/* ==========================================================================
+   PRODUCTION LIGHT-MODE UTILITY OVERRIDES
+   Systematically intercepts dark utilities and overrides them for Light Mode
+   ================================----------------========================== */
+
+/* Card and Container Backgrounds Override */
+.bg-black,
+.bg-zinc-950,
+.bg-\[\#0c0c0e\],
+.bg-\[\#0c0c0e\]\/85,
+.bg-\[\#0c0c0e\]\/80,
+.bg-\[\#0c0c0e\]\/50,
+.bg-\[\#0c0c0e\]\/90,
+.bg-\[\#0c0c0e\]\/95 {
+  background-color: #ffffff !important;
+}
+
+.bg-zinc-900,
+.bg-zinc-900\/40,
+.bg-zinc-900\/90,
+.bg-zinc-900\/80 {
+  background-color: #f1f5f9 !important;
+}
+
+.bg-zinc-950\/50,
+.bg-black\/40,
+.bg-black\/60 {
+  background-color: #f8fafc !important;
+}
+
+/* Force text slate color globally */
+.text-zinc-100 {
+  color: #1e293b !important;
+}
+
+.text-zinc-200 {
+  color: #334155 !important;
+}
+
+.text-zinc-300 {
+  color: #475569 !important;
+}
+
+.text-zinc-400 {
+  color: #64748b !important;
+}
+
+.text-zinc-500 {
+  color: #94a3b8 !important;
+}
+
+.text-white {
+  color: #0f172a !important;
+}
+
+/* Hover-specific text overrides */
+.hover\:text-white:hover {
+  color: #0f172a !important;
+}
+
+.hover\:text-zinc-300:hover {
+  color: #334155 !important;
+}
+
+.hover\:text-zinc-200:hover {
+  color: #1e293b !important;
+}
+
+.hover\:text-zinc-100:hover {
+  color: #0f172a !important;
+}
+
+/* Border overrides */
+.border-zinc-800,
+.border-zinc-800\/80,
+.border-zinc-800\/90,
+.border-zinc-850,
+.border-zinc-750,
+.border-zinc-700 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Hover border overrides */
+.hover\:border-zinc-700:hover,
+.hover\:border-zinc-750:hover {
+  border-color: #cbd5e1 !important;
+}
+
+/* Hover bg overrides */
+.hover\:bg-zinc-900\/40:hover,
+.hover\:bg-zinc-900\/60:hover {
+  background-color: #e2e8f0 !important;
+}
+
+.hover\:bg-zinc-800:hover {
+  background-color: #f1f5f9 !important;
+}
+
+/* Pill tags overrides */
+.bg-zinc-900\/60 {
+  background-color: #f1f5f9 !important;
+}
+
+/* Fix shadow black glow in light mode */
+.shadow-black\/80 {
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Make Quick Select Demo Switcher buttons look great in light mode */
+.bg-zinc-900.text-zinc-300 {
+  background-color: #f8fafc !important;
+  color: #475569 !important;
+  border-color: #e2e8f0 !important;
+}
+.bg-zinc-900.text-zinc-300:hover {
+  background-color: #f1f5f9 !important;
+}
+
+/* Fix primary button classes */
+.bg-white.text-black.border-white {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #2563eb !important;
+}
+.bg-white.text-black.border-white:hover {
+  background-color: #1d4ed8 !important;
+  border-color: #1d4ed8 !important;
+}
+
 
 
 

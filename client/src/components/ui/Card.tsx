@@ -24,20 +24,20 @@ export const Card: React.FC<CardProps> = ({
   };
 
   const variantClasses = {
-    default: 'bg-[#0c0c0e]/85 border border-zinc-800/80',
+    default: 'bg-card border border-border shadow-sm',
     glass: 'glass-card',
-    'glow-purple': 'bg-[#0c0c0e]/85 border border-zinc-800/80 gradient-border-purple shadow-glow-purple/20',
-    'glow-magenta': 'bg-[#0c0c0e]/85 border border-zinc-800/80 gradient-border-magenta shadow-glow-magenta/25',
+    'glow-purple': 'bg-card border border-border gradient-border-purple shadow-glow-purple/10',
+    'glow-magenta': 'bg-card border border-border gradient-border-magenta shadow-glow-magenta/15',
   };
 
   return (
     <div
       className={twMerge(
         clsx(
-          'rounded-2xl text-zinc-100 relative overflow-hidden transition-all duration-300',
+          'rounded-2xl text-slate-800 relative overflow-hidden transition-all duration-300',
           paddingStyles[padding],
           variantClasses[variant],
-          hoverable && 'hover:border-zinc-700 hover:bg-[#101013]/90 hover:shadow-glow-subtle hover:-translate-y-0.5',
+          hoverable && 'hover:border-slate-300 hover:bg-slate-50 hover:shadow-glow-blue/5 hover:-translate-y-0.5',
           className
         )
       )}
